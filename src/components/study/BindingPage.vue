@@ -3,7 +3,7 @@
     <h2>学習1：双方向バインディング</h2>
 
     <!-- 従来のJavaScript -->
-    <h3><span>JavaScript</span></h3>
+    <h3><span class="badge badge-secondary">JavaScript</span></h3>
     <input class="form-control" id="name">
     <span id="text">入力された名前はです</span>
     <br>
