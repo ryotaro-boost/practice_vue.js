@@ -8,6 +8,11 @@
     <span id="text">チェック時のみ表示</span>
     <br>
     <br>
+
+    <!-- Vue.js -->
+    <h3><span class="badge badge-secondary">Vue.js</span></h3>
+    <input type="checkbox" v-model="checked">
+    <span v-show="checked">チェック時のみ表示</span>
   </div>
 </template>
 
@@ -27,7 +32,11 @@ window.onload = function() {
 }
 
 export default {
-  
+  data() {
+    return {
+      checked : true
+    }
+  } 
 }
 </script>
 
