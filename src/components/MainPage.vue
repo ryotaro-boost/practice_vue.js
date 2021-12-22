@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.min-page {
+.main-page {
     display: flex;
     height: calc(100vh - 60px);
     .left-menu {
