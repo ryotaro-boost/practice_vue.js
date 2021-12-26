@@ -34,11 +34,22 @@ export default {
                 id : new Date().getTime().toString(16),
                 name : '新規ノート',
                 mouseover : false,
+                editing : false,
             })
         },
         onDeleteNote : function(deleteNote) {
             const index =this.notelist.indexOf(deleteNote);
             this.notelist.splice(index, 1);
+        },
+        onEditNoteStart : function(editNote) {
+            for (let note of this.notelist) {
+                note.editing = (note.id === editNote.id);
+            }
+        },
+        onEditNoteEnd : function() {
+            for (let note of this.notelist) {
+                note.editing = false;
+            }
         },
     },
     components: {
