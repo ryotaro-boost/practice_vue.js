@@ -35,6 +35,10 @@ export default {
   align-items: center;
   padding: 5px;
   color: rgba(25, 23, 17, 0.6);
+  &.mouseover {
+    background-color: rgb(232, 231, 228);
+    cursor: pointer;
+  }
   .note-icon {
     margin-left: 10px;
   }
