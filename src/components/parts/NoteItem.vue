@@ -1,5 +1,9 @@
 <template>
-  <div class="note">
+  <div class="note"
+    @mouseover="onMouseOver"
+    @mouseleave="onMouseLeave"
+    v-bind:class="{ mouseover:note.mouseover }"
+  >
     <div class="note-icon">
       <i class="fas fa-file-alt"></i>
     </div>
@@ -12,7 +16,15 @@ export default {
   name: 'NoteItem',
   props: [
     'note',
-  ]
+  ],
+  methods: {
+    onMouseOver : function() {
+      this.note.mouseover = true;
+    },
+    onMouseLeave : function() {
+      this.note.mouseover = false;
+    },
+  }
 }
 </script>
 

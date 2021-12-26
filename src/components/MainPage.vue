@@ -32,6 +32,7 @@ export default {
             this.notelist.push({
                 id : new Date().getTime().toString(16),
                 name : '新規ノート',
+                mouseover : false,
             })
         },
     },
