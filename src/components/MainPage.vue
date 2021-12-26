@@ -2,7 +2,7 @@
     <div class="main-page">
         <div class="left-menu">
             <!-- ノート追加ボタン -->
-            <button class="transparent" @click="pnClickButtonAdd">
+            <button class="transparent" @click="onClickButtonAdd">
                 <i class="fas fa-plus-square"></i>ノートを追加
             </button>
         </div>
