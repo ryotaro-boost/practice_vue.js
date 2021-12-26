@@ -1,19 +1,21 @@
 <template>
     <div class="main-page">
-        <div class="left-menu">
+        <div class="left-menu" @click.self="onEditNoteEnd()">
             <!-- ノートリスト -->
             <NoteItem
                 v-for="note in notelist"
                 v-bind:note="note"
                 v-bind:key="note.id"
                 @delete="onDeleteNote"
+                @editStart="onEditNoteStart"
+                @editEnd="onEditNoteEnd"
             />
             <!-- ノート追加ボタン -->
             <button class="transparent" @click="onClickButtonAdd">
                 <i class="fas fa-plus-square"></i>ノートを追加
             </button>
         </div>
-        <div class="right-view">
+        <div class="right-view" @click="onEditNoteEnd()">
             右メニュー
         </div>
     </div>
