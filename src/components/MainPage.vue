@@ -11,6 +11,7 @@
                 @editStart="onEditNoteStart"
                 @editEnd="onEditNoteEnd"
                 @addChild="onAddChildNote"
+                @addNoteAfter="onAddNoteAfter"
             />
             <!-- ノート追加ボタン -->
             <button class="transparent" @click="onClickButtonAdd">
@@ -73,6 +74,12 @@ export default {
         },
         onAddChildNote : function(note) {
             this.onAddNoteCommon(note.children, note.layer + 1);
+        },
+        onAddNoteAfter : function(parentNote, note) {
+            const targetList = parentNote == null ? this.noteList : parentNote.children;
+            const layer = parentNote == null ? 1 : note.Layer;
+            const index = targetList.indexOf(note);
+            this.onAddNoteCommon(targetList, layer, index);
         }
     },
     components: {
