@@ -33,14 +33,24 @@ export default {
         }
     },
     methods: {
-        onClickButtonAdd : function() {
-            this.notelist.push({
+        onAddNoteCommon : function(targetList, layer, index) {
+            layer = layer || 1;
+            const note = {
                 id : new Date().getTime().toString(16),
-                name : '新規ノート',
+                name : '新規ノート-${layer}-${targetList.length}',
                 mouseover : false,
                 editing : false,
                 children : [],
-            })
+                layer : layer,
+            };
+            if (index == null) {
+                targetList.push(note);
+            } else {
+                targetList.splice(index + 1, 0, note)
+            }
+        },
+        onClickButtonAdd : function() {
+            this.onAddNoteCommon(this.notelist);
         },
         onDeleteNote : function(parentNote, note) {
             const targetList = parentNote == null ? this.notelist : parentNote.children;
@@ -62,13 +72,7 @@ export default {
             }
         },
         onAddChildNote : function(note) {
-            note.children.push({
-                id : new Date().getTime().toString(16),
-                name : note.name + 'の子',
-                mouseover : false,
-                editing : false,
-                children : [],
-            });
+            this.onAddNoteCommon(note.children, note.layer + 1);
         }
     },
     components: {
