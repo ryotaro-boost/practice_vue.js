@@ -38,7 +38,7 @@ export default {
             layer = layer || 1;
             const note = {
                 id : new Date().getTime().toString(16),
-                name : '新規ノート-${layer}-${targetList.length}',
+                name : `新規ノート-${layer}-${targetList.length}`,
                 mouseover : false,
                 editing : false,
                 children : [],
