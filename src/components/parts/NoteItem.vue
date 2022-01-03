@@ -18,7 +18,7 @@
           <div class="button-icon" v-if="layer < 3" @click="onClickChildNote(note)">
             <i class="fas fa-sitemap"></i>
           </div>
-          <div class="button-icon" @click="onclickAddNoteAfter(parentNote, note)">
+          <div class="button-icon" @click="onClickAddNoteAfter(parentNote, note)">
             <i class="fas fa-plus-circle"></i>
           </div>
           <div class="button-icon" @click="onClickEdit(note)">
@@ -41,7 +41,7 @@
         @editStart="onClickEdit"
         @editEnd="onEditEnd"
         @addChild="onClickChildNote"
-        @addNoteAfter="onclickAddNoteAfter"
+        @addNoteAfter="onClickAddNoteAfter"
       />
     </div>
   </div>

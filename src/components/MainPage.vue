@@ -76,8 +76,8 @@ export default {
             this.onAddNoteCommon(note.children, note.layer + 1);
         },
         onAddNoteAfter : function(parentNote, note) {
-            const targetList = parentNote == null ? this.noteList : parentNote.children;
-            const layer = parentNote == null ? 1 : note.Layer;
+            const targetList = parentNote == null ? this.notelist : parentNote.children;
+            const layer = parentNote == null ? 1 : note.layer;
             const index = targetList.indexOf(note);
             this.onAddNoteCommon(targetList, layer, index);
         }
