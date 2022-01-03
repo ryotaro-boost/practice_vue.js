@@ -65,7 +65,10 @@ export default {
     },
     onEditEnd : function() {
       this.$emit('editEnd');
-    }
+    },
+    onClickChildNote : function(note) {
+      this.$emit('addChild', note);
+    },
   }
 }
 </script>
