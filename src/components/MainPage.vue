@@ -46,9 +46,11 @@ export default {
             const index = targetList.indexOf(note);
             targetList.splice(index, 1);
         },
-        onEditNoteStart : function(editNote) {
-            for (let note of this.notelist) {
+        onEditNoteStart : function(editNote, parentNote) {
+            const targetList = parentNote == null ? this.notelist : parentNote.children;
+            for (let note of targetList) {
                 note.editing = (note.id === editNote.id);
+                this.onEditNoteStart(editNote, note);
             }
         },
         onEditNoteEnd : function() {
