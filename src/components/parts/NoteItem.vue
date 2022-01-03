@@ -74,7 +74,7 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-  .note {
+.note {
   margin: 10px 0;
   display: flex;
   align-items: center;
@@ -100,5 +100,8 @@ export default {
       border-radius: 5px;
     }
   }
+}
+.child-note {
+  padding-left: 10px;
 }
 </style>
