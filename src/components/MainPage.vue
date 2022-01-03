@@ -53,9 +53,11 @@ export default {
                 this.onEditNoteStart(editNote, note);
             }
         },
-        onEditNoteEnd : function() {
-            for (let note of this.notelist) {
+        onEditNoteEnd : function(parentNote) {
+            const targetList = parentNote == null ? this.notelist : parentNote.children;
+            for (let note of targetList) {
                 note.editing = false;
+                this.onEditNoteEnd(note);
             }
         },
         onAddChildNote : function(note) {
