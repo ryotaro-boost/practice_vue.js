@@ -41,9 +41,10 @@ export default {
                 children : [],
             })
         },
-        onDeleteNote : function(deleteNote) {
-            const index =this.notelist.indexOf(deleteNote);
-            this.notelist.splice(index, 1);
+        onDeleteNote : function(parentNote, note) {
+            const targetList = parentNote == null ? this.notelist : parentNote.children;
+            const index = targetList.indexOf(note);
+            targetList.splice(index, 1);
         },
         onEditNoteStart : function(editNote) {
             for (let note of this.notelist) {
